@@ -33,7 +33,7 @@
       ">3</button></div>
 
     <div><button class="button operations" onclick="
-        const o1 = ' + ';
+        const o1 = '+';
         placeCharacter(o1);
       ">+</button></div>
 
@@ -53,7 +53,7 @@
       " >6</button></div>
    
     <div><button class="button operations" onclick="
-      const o2 = ' - ';
+      const o2 = '-';
       placeCharacter(o2);
       " >-</button></div>
        
@@ -73,32 +73,36 @@
       " >9</button></div>
        
     <div><button class="button operations" onclick="
-      const o3 = ' * '
+      const o3 = '*'
       placeCharacter(o3);
       " >*</button></div>
          
     <div><button class="button" onclick="
-      const b0 = '0';
-      placeCharacter(b0);
-      ">0</button></div> 
-
-    <div><button class="button" onclick="
       const v1 = '.';
       placeCharacter(v1);
       ">.</button></div>
+
+    <div><button class="button" onclick="
+      const b0 = '0';
+      placeCharacter(b0);
+      ">0</button></div> 
 
     <div><button class="button calculate" id="equal" onclick="
       calculate();
       ">=</button></div>
 
     <div><button class="button operations" onclick="
-      const o4 = ' / ';
+      const o4 = '/';
       placeCharacter(o4);
     ">/</button></div>
 
     <div><button class="button clear" onclick="
       clearButton();
       ">Clear</button></div>
+
+    <div><button class="button clear" onclick="
+      del();
+      ">del</button></div>
   </div>
 </div>
 
