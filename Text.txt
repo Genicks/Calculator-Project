@@ -1,0 +1,11 @@
+Things I want to add to the calculator:
+
+1. Turn the display textField in to a text box
+2. add onpress functionallity 
+3. add space to display text
+4. add gray background to button container\
+
+
+//Add space to display text:
+1. Remove space before the del function is completely carried out.
+
