@@ -26,7 +26,7 @@ function placeCharacter(character){
 }
 
 function calculate (){
-  let result = eval(workingCal.innerHTML) || '';
+  let result = eval(workingCal.innerHTML) || '0';
   workingCal.innerHTML = '';
   displayTotal.innerHTML = result;
 }
@@ -39,33 +39,12 @@ function clearButton (){
 function del (){
   console.log(`WC: ${workingCal.innerHTML}`);
   console.log(`DT: ${displayTotal.innerHTML}`);
-  
-  let display = workingCal.innerHTML;
-  let newWorkingCal = checkForArtOperators(display);
 
-  workingCal.innerHTML = newWorkingCal.slice(0, -1);
-  displayTotal.innerHTML = displayTotal.innerHTML.slice(0, -1);
-}
-
-function checkForArtOperators(dis) {
-  if (dis.includes(' + ')){
-    dis = dis.replace(' + ', '+');
-    return dis
-  }
-  else if (dis.includes(' - ')){
-    dis = dis.replace(' - ', '-');
-    return dis
-  }
-  else if (dis.includes(' / ')){
-    dis = dis.replace(' / ', '/');
-    return dis
-  }
-  else if (dis.includes(' * ')){
-    dis = dis.replace(' * ', '*');
-    return dis
+  if (workingCal.innerHTML.charAt(workingCal.innerHTML.length - 1).includes(' ')){
+    workingCal.innerHTML = workingCal.innerHTML.slice(0, -3);
   }
   else{
-    dis = dis;
-    return dis
+    workingCal.innerHTML = workingCal.innerHTML.slice(0, -1);
+    displayTotal.innerHTML = displayTotal.innerHTML.slice(0, -1);
   }
 }
