@@ -1,6 +1,6 @@
+let workingCal2 = document.getElementById('textbox');
+let displayTotal2 = '';
 
-let workingCal = document.querySelector('.textField');
-let displayTotal = document.querySelector('.textField2');
 let artOperaters = [' + ', ' - ', ' * ', ' / ']
 
 function operatorTest (character){
@@ -10,41 +10,41 @@ function operatorTest (character){
 }
 
 function placeCharacter(character){
-
-  if (displayTotal.innerHTML != ''){
+  if (displayTotal2 != ''){
 
     if (operatorTest(character)){
-      workingCal.innerHTML = displayTotal.innerHTML;
-      displayTotal.innerHTML = '';
+      workingCal2.value = displayTotal2;
+      displayTotal2 = '';
     }
     else{
-      displayTotal.innerHTML = '';
+      displayTotal2 = '';
     }
   
   }
-  workingCal.innerHTML += character;
+  workingCal2.value += character;
 }
 
 function calculate (){
-  let result = eval(workingCal.innerHTML) || '0';
-  workingCal.innerHTML = '';
-  displayTotal.innerHTML = result;
+  let result2 = eval(workingCal2.value) || '0';
+  console.log(result2);
+
+  workingCal2.value = '';
+
+  displayTotal2 = result2;
+  workingCal2.value = result2;
 }
 
 function clearButton (){
-  workingCal.innerHTML = '';
-  displayTotal.innerHTML = '';
+  workingCal2.value = '';
 }
 
-function del (){
-  console.log(`WC: ${workingCal.innerHTML}`);
-  console.log(`DT: ${displayTotal.innerHTML}`);
-
-  if (workingCal.innerHTML.charAt(workingCal.innerHTML.length - 1).includes(' ')){
-    workingCal.innerHTML = workingCal.innerHTML.slice(0, -3);
+function del (){  
+  if (workingCal2.value.charAt(workingCal2.value.length - 1).includes(' ')){
+    workingCal2.value = workingCal2.value.slice(0, -3);
   }
+
   else{
-    workingCal.innerHTML = workingCal.innerHTML.slice(0, -1);
-    displayTotal.innerHTML = displayTotal.innerHTML.slice(0, -1);
+    workingCal2.value = workingCal2.value.slice(0, -1);
+    displayTotal2.value = displayTotal.value.slice(0, -1);
   }
 }

@@ -10,3 +10,5 @@ Things I want to add to the calculator:
 
 //Add space to display text:
 1. Remove space before the del function is completely carried out.
+
+Turn the display texfield in to a text box
